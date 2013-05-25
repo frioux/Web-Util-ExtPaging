@@ -2,4 +2,4 @@
 Makefile
 *.gz
 .build
-Catalyst-TraitFor-Controller-DoesExtPaging-*
+Web-Util-ExtPaging-*
