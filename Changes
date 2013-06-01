@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ - Remove unneeded dep on parent.pm
 
 0.001000  2013-05-25 13:22:30 CST6CDT
  - Initial Release, factored out of
