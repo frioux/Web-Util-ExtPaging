@@ -23,7 +23,9 @@ sub ext_paginate {
    }
 
    return ext_parcel(
-      [map $_->$method, $resultset->all],
+      $resultset->result_class eq 'DBIx::Class::ResultClass::HashRefInflator' ?
+         [$resultset->all] :
+         [map $_->$method, $resultset->all],
       $resultset->is_paged
          ? ($resultset->pager->total_entries)
          : (),
