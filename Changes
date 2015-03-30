@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ - Fix HRI'd resultsets to use coderef if passed (Good find Nathan Dyck!)
 
 0.001002  2014-11-03 16:21:05-06:00 America/Chicago
  - Transparently support resultsets using HRI (Wes Malone)

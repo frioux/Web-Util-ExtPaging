@@ -128,4 +128,28 @@ my $rs = $schema->resultset('Stations')->search(undef, {
        })
    }, 'ext_parcel correctly builds structure';
 }
+
+{
+   my $rs = $schema->resultset('Stations')->search(undef, {
+      columns => ['id'],
+      order_by => 'id',
+      rows => 3,
+      page => 1,
+      result_class => 'DBIx::Class::ResultClass::HashRefInflator',
+   });
+
+   my $data = ext_paginate($rs, sub { +{ id => $_[0]{id} + 1 } } );
+
+   cmp_deeply $data, {
+       total => 9,
+       data=> set({
+          id => 2,
+       },{
+          id => 3,
+       },{
+          id => 4,
+       })
+   }, 'ext_paginate w/ HRI works with coderef';
+}
+
 done_testing;

@@ -23,7 +23,7 @@ sub ext_paginate {
    }
 
    return ext_parcel(
-      $resultset->result_class->isa('DBIx::Class::ResultClass::HashRefInflator') ?
+      $resultset->result_class->isa('DBIx::Class::ResultClass::HashRefInflator') && !ref $method ?
          [$resultset->all] :
          [map $_->$method, $resultset->all],
       $resultset->is_paged
