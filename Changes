@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.001003  2015-03-30 13:54:41-05:00 America/Chicago
  - Fix HRI'd resultsets to use coderef if passed (Good find Nathan Dyck!)
 
 0.001002  2014-11-03 16:21:05-06:00 America/Chicago
